@@ -4,8 +4,8 @@ import errno
 import argparse
 import numpy as np
 import cv2
-import tensorflow as tf
-
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 
 def _run_in_batches(f, data_dict, out, batch_size):
     data_len = len(out)
@@ -72,7 +72,7 @@ class ImageEncoder(object):
 
     def __init__(self, checkpoint_filename, input_name="images",
                  output_name="features"):
-        self.session = tf.Session()
+        self.session = tf.compat.v1.Session()
         with tf.gfile.GFile(checkpoint_filename, "rb") as file_handle:
             graph_def = tf.GraphDef()
             graph_def.ParseFromString(file_handle.read())

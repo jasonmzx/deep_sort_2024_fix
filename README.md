@@ -9,14 +9,9 @@ See the [arXiv preprint](https://arxiv.org/abs/1703.07402) for more information.
 
 ## Dependencies
 
-The code is compatible with Python 2.7 and 3. The following dependencies are
-needed to run the tracker:
+You can use python 3.10, aswell as the YoloV8 with the Instance class added, for easy Deep Sorting on Segmentation Detections
 
-* NumPy
-* sklearn
-* OpenCV
-
-Additionally, feature generation requires TensorFlow (>= 1.0).
+`pip install -r requirements.txt`
 
 ## Installation
 
